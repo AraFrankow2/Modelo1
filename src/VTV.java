@@ -13,6 +13,7 @@ public class VTV {
 		this.frenos=frenos;
 		this.suspension=suspension;
 	}
+	
 	public static boolean ValidarNombre(String nombre) {
 		boolean numero = false;
 		if (nombre.isEmpty()) {

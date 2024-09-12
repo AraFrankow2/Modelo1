@@ -16,6 +16,8 @@ public class Main1 {
 			DNI = JOptionPane.showInputDialog("Ingrese su DNI");
 		} while (!VTV.ValidarDni(DNI));
 		
+		VTV validarVTV = new VTV(false, false, false);
+		
 	}
 	
 	
