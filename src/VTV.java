@@ -13,23 +13,24 @@ public class VTV {
 		this.frenos=frenos;
 		this.suspension=suspension;
 	}
-	public static boolean ValidarDni(String dni) {
-		boolean letra = false;
-		if (dni.length()<7 || dni.length()>8) {
+	public static boolean ValidarNombre(String nombre) {
+		boolean numero = false;
+		if (nombre.isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Está vacio el nombre");
 			return false;
 		} else {
-			for (int i = 0; i < dni.length(); i++) {
-				if (Character.isLetter(dni.charAt(i))) {
-					letra=true;
+			for (int i = 0; i < nombre.length(); i++) {
+				if (Character.isDigit(nombre.charAt(i))) {
+					numero=true;
 				}
 			}
-			if (letra==true) {
-				JOptionPane.showMessageDialog(null, "No puede tener letras el DNI");
+			if (numero==true) {
+				JOptionPane.showMessageDialog(null, "No puede tener numeros un nombre");
 				return false;
 			} else {
 				return true;
 			}
-		}	
+		}
 	}
 	public static boolean ValidarPatente(String patente) {
 		boolean mayus = false;
@@ -60,23 +61,24 @@ public class VTV {
 			return false;
 		}
 	}
-	public static boolean ValidarNombre(String nombre) {
-		boolean numero = false;
-		if (nombre.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Está vacio el nombre");
+	public static boolean ValidarDni(String dni) {
+		boolean letra = false;
+		if (dni.length()<7 || dni.length()>8) {
 			return false;
 		} else {
-			for (int i = 0; i < nombre.length(); i++) {
-				if (Character.isDigit(nombre.charAt(i))) {
-					numero=true;
+			for (int i = 0; i < dni.length(); i++) {
+				if (Character.isLetter(dni.charAt(i))) {
+					letra=true;
 				}
 			}
-			if (numero==true) {
-				JOptionPane.showMessageDialog(null, "No puede tener numeros un nombre");
+			if (letra==true) {
+				JOptionPane.showMessageDialog(null, "No puede tener letras el DNI");
 				return false;
 			} else {
+				JOptionPane.showMessageDialog(null, "Correcto");
 				return true;
 			}
-		}
+		}	
 	}
+	
 }
